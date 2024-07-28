@@ -1,0 +1,33 @@
+## this code involves anlaysing the sentiment behind the reviews of amazon using dataset reviews.csv
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import nltk
+
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+from tqdm.notebook import tqdm
+df=pd.read_csv('Reviews.csv')
+
+df=df.head(500)
+
+# VADER
+x=SentimentIntensityAnalyzer()  ## creating an odject 
+senti=x.polarity_scores('i am happy')
+
+
+# applying polarity_score on our entire datasets
+
+data=[]
+polarity=[]
+
+for i in range(0,len(df)):
+    data.append(df['Text'][i])
+    ans=x.polarity_scores(df['Text'][i])
+    polarity.append(ans)
+
+sf=pd.DataFrame({"text":data,"polar":polarity})
+
+print(sf.head())
