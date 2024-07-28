@@ -59,8 +59,8 @@ __step 3__: creating an object for sentimentIntensit Analyzer . Its the key comp
 
 __step 4__: in this step we will apply analyzer to whole dataset
 
->data=[]
-polarity=[]
+>data=[]  
+polarity=[]  
 for i in range(0,len(df)):  
     data.append(df['Text'][i])  
     compound_score=x.polarity_scores(df['Text'][i])   
