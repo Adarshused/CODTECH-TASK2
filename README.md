@@ -55,6 +55,8 @@ __step 3__: creating an object for sentimentIntensit Analyzer . Its the key comp
  evaluating the intensity of sentiments expressed in text. 
 
   >x=SentimentIntensityAnalyzer().
+
+
 __step 4__: in this step we will apply analyzer to whole dataset
 
 >data=[]
